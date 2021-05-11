@@ -29,12 +29,11 @@ time.sleep(3)
 # Handle Likes and matches
 body = driver.find_element_by_tag_name("body")
 body.click()
-body.send_keys(Keys.SHIFT)
-body.send_keys(Keys.SHIFT)
-body.send_keys(Keys.ENTER)
-body.send_keys(Keys.SHIFT)
-body.send_keys(Keys.SHIFT)
-body.send_keys(Keys.ENTER)
+# Allow Location, Notification popup
+for i in range(2):
+    body.send_keys(Keys.SHIFT)
+    body.send_keys(Keys.SHIFT)
+    body.send_keys(Keys.ENTER)
 body.send_keys(Keys.ESCAPE)
 # Do 100 likes per day
 for i in range(100):
